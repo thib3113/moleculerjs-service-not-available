@@ -2,6 +2,8 @@ This is an example repo, to illustrate the serviceNotAvailable error from molecu
 
 This test only works on linux like machine (kill need to allow to send specific signals) .
 
+Also, you will need nats (or other message broker) (TCP transporter send disconnect when process die, without waiting the disconnect packet)
+
 Here is the scenario :
 
 -   start node1 and node2

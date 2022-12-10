@@ -42,18 +42,18 @@ const main = async () => {
     logEndpointsForAction(actionName);
 
     //partial stop of node2 for an unknown reason (simulate a "can send service shutdown, but not disconnect for some reason")
-    console.log("kill node2");
+    console.log("kill node-2");
     node2Process.kill("SIGINT");
 
     // => this will force node-2 to send an INFO package
     // also node-2 will exit just after sending the INFO
-    console.log("wait next update from node2");
+    console.log("wait next update from node-2");
     await new Promise((res) => {
         node1.localBus.once("$node.updated", res);
     });
 
     //restart node2 (this can be logged after "test service stopped", it's not a problem)
-    console.log("start node2");
+    console.log("start node-2");
     node2Process = fork("./node2.js", [], { stdio: "pipe" });
 
     // await new node-2 reconnect
@@ -66,7 +66,7 @@ const main = async () => {
     const nodes = await node1.call("$node.list", { withServices: true, onlyAvailable: true });
     const resNode2 = nodes.find((n) => n.id === "node-2");
     console.log(
-        `node2 available ? ${JSON.stringify(!!resNode2)}, action test.ping available on node2 ? ${JSON.stringify(
+        `node-2 available ? ${JSON.stringify(!!resNode2)}, action test.ping available on node-2 ? ${JSON.stringify(
             resNode2 && resNode2.services.some((s) => s.actions["test.ping"])
         )}`
     );
