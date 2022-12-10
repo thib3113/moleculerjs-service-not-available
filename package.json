@@ -1,16 +1,16 @@
 {
-  "name": "test-broker-fail-sync",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "moleculer": "^0.14.26",
-    "moleculer-repl": "^0.7.3"
-  }
+    "name": "test-broker-fail-sync",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "moleculer": "^0.14.26",
+        "moleculer-repl": "^0.7.3"
+    }
 }
